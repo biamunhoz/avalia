@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Número USP:</strong>
+  <%= @aluno.numusp %>
+</p>
+
+<p>
+  <strong>Habilitado:</strong>
+  <%= @aluno.habilitado ? "Sim": "Não" %>
+</p>
+
+<%= link_to 'Editar', edit_aluno_path(@aluno) %> |
+<%= link_to 'Voltar', alunos_path %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Aluno:</strong>
+  <%= @alunodisc.aluno.numusp %>
+</p>
+
+<p>
+  <strong>Disciplina:</strong>
+  <%= @alunodisc.disciplina.codigo %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @alunodisc.status %>
+</p>
+
+<p>
+  <strong>Semestre:</strong>
+  <%= @alunodisc.semestre %>
+</p>
+
+<p>
+  <strong>Ano:</strong>
+  <%= @alunodisc.ano %>
+</p>
+
+<%= link_to 'Editar', edit_alunodisc_path(@alunodisc) %> |
+<%= link_to 'Voltar', alunodiscs_path %>

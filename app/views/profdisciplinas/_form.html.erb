@@ -1,0 +1,27 @@
+<%= form_with(model: profdisciplina, local: true) do |form| %>
+  <% if profdisciplina.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(profdisciplina.errors.count, "error") %> prohibited this profdisciplina from being saved:</h2>
+
+      <ul>
+      <% profdisciplina.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :professor_id, "Professor" %>
+    <%= form.select("professor_id", Professor.all.collect {|p| [ p.nome, p.id ] })  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :disciplina_id, "Disciplina vinculada" %>
+    <%= form.select("disciplina_id", Disciplina.all.collect {|p| [ p.codigo, p.id ] })  %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Salvar" %>
+  </div>
+<% end %>

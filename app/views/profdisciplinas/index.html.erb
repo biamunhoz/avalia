@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Professor e Disciplinas vinculadas </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Professor</th>
+      <th>Disciplina</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @profdisciplinas.each do |profdisciplina| %>
+      <tr>
+        <td><%= profdisciplina.professor.nome %></td>
+        <td><%= profdisciplina.disciplina.codigo %></td>
+        <td><%= link_to 'Mostrar', profdisciplina %></td>
+        <td><%= link_to 'Editar', edit_profdisciplina_path(profdisciplina) %></td>
+        <td><%= link_to 'Apagar', profdisciplina, method: :delete, data: { confirm: 'Você tem certeza' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Novo vinculo Professor e Disciplina', new_profdisciplina_path %>

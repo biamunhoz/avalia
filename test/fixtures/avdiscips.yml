@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  disciplina: one
+  cronograma: false
+  criterios: false
+  entendeuobj: false
+  cronocumprido: 1
+  estrategias: 1
+  quantadequada: 1
+  coerencia: 1
+  seuconhecimento: 1
+  extraclasse: 1
+  saladeaula: 1
+  percepcao: 1
+  notadisciplina: 1
+  recomendaria: 1
+  sugestoes: MyText
+  ano: 1
+  semestre: 1
+  pulouavaliacao: false
+
+two:
+  disciplina: two
+  cronograma: false
+  criterios: false
+  entendeuobj: false
+  cronocumprido: 1
+  estrategias: 1
+  quantadequada: 1
+  coerencia: 1
+  seuconhecimento: 1
+  extraclasse: 1
+  saladeaula: 1
+  percepcao: 1
+  notadisciplina: 1
+  recomendaria: 1
+  sugestoes: MyText
+  ano: 1
+  semestre: 1
+  pulouavaliacao: false

@@ -1,0 +1,134 @@
+<p id="notice"><%= notice %></p>
+
+<h2>Avaliação </h2>
+
+<p>
+  <strong>Ano:</strong>
+  <%= @avdiscip.ano %>
+</p>
+
+<p>
+  <strong>Semestre:</strong>
+  <%= @avdiscip.semestre %>
+</p>
+
+<p>
+  <strong>Disciplina:</strong>
+  <%= @avdiscip.disciplina.codigo %>
+</p>
+
+<p>
+  <strong>Pulouavaliacao:</strong>
+  <%= @avdiscip.pulouavaliacao  ? "Sim": "Não" %>
+</p>
+
+<% if @avdiscip.pulouavaliacao == false %>
+<p>
+  <strong>O cronograma de aulas e avaliações foi apresentado?</strong>
+  <%= @avdiscip.cronograma  ? "Sim": "Não" %>
+</p>
+
+<p>
+  <strong>Os critérios de avaliação foram apresentados?</strong>
+  <%= @avdiscip.criterios ? "Sim": "Não" %>
+</p>
+
+<p>
+  <strong> Você entendeu os objetivos da disciplina?</strong>
+  <%= @avdiscip.entendeuobj ? "Sim": "Não" %>
+</p>
+
+<p>
+  <strong>O cronograma foi cumprido satisfatoriamente:</strong>
+  <%= @avdiscip.cronocumprido %>
+</p>
+
+<p>
+  <strong>As estratégias didáticas contribuíram para o seu aprendizado:</strong>
+  <%= @avdiscip.estrategias %>
+</p>
+
+<p>
+  <strong>A quantidade exigida de atividades extraclasse foi adequada:</strong>
+  <%= @avdiscip.quantadequada %>
+</p>
+
+<p>
+  <strong>O conteúdo cobrado nas avaliações foi coerente com o programa da disciplina:</strong>
+  <%= @avdiscip.coerencia %>
+</p>
+
+<p>
+  <strong>Os conhecimentos que você já tinha foram suficientes para acompanhar a disciplina:</strong>
+  <%= @avdiscip.seuconhecimento %>
+</p>
+
+<p>
+  <strong>Avalie sua dedicação extraclasse ao aprendizado da disciplina:</strong>
+  <%= @avdiscip.extraclasse %>
+</p>
+
+<p>
+  <strong>Avalie sua dedicação em sala de aula ao aprendizado da disciplina:</strong>
+  <%= @avdiscip.saladeaula %>
+</p>
+
+<p>
+  <strong>Percepção de aprendizado: sinto-me capaz de explicar assuntos da disciplina para calouros:</strong>
+  <%= @avdiscip.percepcao %>
+</p>
+
+<p>
+  <strong>Atribua uma nota para a disciplina:</strong>
+  <%= @avdiscip.notadisciplina %>
+</p>
+
+<p>
+  <strong>Você recomendaria essa disciplina para um colega:</strong>
+  <%= @avdiscip.recomendaria %>
+</p>
+
+<p>
+  <strong>Sugestões para melhoria da disciplina, especialmente sobre os itens que você avaliou como insatisfatórios. Inclua sugestões sobre atividades em sala de aula e fora dela que, na sua opinião, podem ser mais bem exploradas.
+  Se quiser, use também este espaço para avaliação individual dos professores por escrito:</strong>
+  <%= @avdiscip.sugestoes %>
+</p>
+
+<h2>Dados de avaliação dos professores que ministram essa disciplina</h2>
+  <table class=" table table-bordered">
+    <thead>
+      <tr>
+        <th class="text-center">Nome </th>
+        <th class="text-center"> Ano </th>
+        <th class="text-center"> Semestre </th>
+        <th class="text-center"> Ministrou aulas condizentes com o conteúdo programático</th>
+        <th class="text-center"> Foi didático na apresentação dos conteúdos </th>
+        <th class="text-center"> Foi claro na solução de dúvidas </th>
+        <th class="text-center"> Teve respeito nas interações com os alunos </th>
+        <th class="text-center"> Houve, da parte da turma, um comportamento respeitoso em relação ao professor </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @avdiscip.avaliacaoprofs.each do |i|  %>
+        <tr>
+          <td> <%= i.professor.nome %> </td>
+          <td> <%= i.ano %> </td>
+          <td> <%= i.semestre %> </td>
+          <td> <%= i.aulascondizentes %> </td>
+          <td> <%= i.didatico %> </td>
+          <td> <%= i.claro %></td>
+          <td> <%= i.respeito %> </td>
+          <td> <%= i.comportamentotur %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<% else %>
+
+  <p>Essa avaliação foi entregue em branco </p>
+<% end %>
+
+<br>
+
+<%= link_to 'Voltar', user_path %>

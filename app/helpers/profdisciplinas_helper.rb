@@ -1,0 +1,2 @@
+module ProfdisciplinasHelper
+end

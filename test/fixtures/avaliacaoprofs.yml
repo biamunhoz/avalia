@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  avdiscip: one
+  disciplina: one
+  professor: one
+  aulascondizentes: 1
+  didatico: 1
+  claro: 1
+  respeito: 1
+  comportamentotur: 1
+  ano: 1
+  semestre: 1
+
+two:
+  avdiscip: two
+  disciplina: two
+  professor: two
+  aulascondizentes: 1
+  didatico: 1
+  claro: 1
+  respeito: 1
+  comportamentotur: 1
+  ano: 1
+  semestre: 1

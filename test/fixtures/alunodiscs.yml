@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  aluno: one
+  disciplina: one
+  status: MyString
+  semestre: 1
+  ano: 1
+
+two:
+  aluno: two
+  disciplina: two
+  status: MyString
+  semestre: 1
+  ano: 1

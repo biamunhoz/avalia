@@ -1,0 +1,76 @@
+<p id="notice"><%= notice %></p>
+
+
+<% if session[:perfil] == "Admin" %>
+
+  <h1>Vínculo Aluno Disciplina</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Aluno</th>
+        <th>Disciplina</th>
+        <th>Status</th>
+        <th>Semestre</th>
+        <th>Ano</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @alunodiscs.each do |alunodisc| %>
+        <tr>
+          <td><%= alunodisc.aluno.numusp %></td>
+          <td><%= alunodisc.disciplina.codigo %></td>
+          <td><%= alunodisc.status %></td>
+          <td><%= alunodisc.semestre %></td>
+          <td><%= alunodisc.ano %></td>
+          <td><%= link_to 'Mostrar', alunodisc %></td>
+          <td><%= link_to 'Editar', edit_alunodisc_path(alunodisc) %></td>
+          <td><%= link_to 'Apagar', alunodisc, method: :delete, data: { confirm: 'Você tem certeza ?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+
+  <%= link_to 'Novo Vínculo Aluno - Disciplina', new_alunodisc_path %>
+
+<% else %>
+  <h1>Avaliações </h1>
+
+  <table>
+        <thead>
+          <tr>
+          <th>Disciplina</th>
+          <th>Status</th>
+          <th>Semestre</th>
+          <th>Ano</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+    <% @alunodiscs.each do |alunodisc| %>
+      <tbody>
+        <tr>
+          <td><%= alunodisc.disciplina.codigo %></td>
+          <td><%= alunodisc.status %></td>
+          <td><%= alunodisc.semestre %></td>
+          <td><%= alunodisc.ano %></td>
+          <% if alunodisc.status == "Liberada" %>
+            <td><%= link_to "Avaliar Disciplina", new_avdiscip_path(:idadisc => alunodisc.id) %>  </td>
+            <td><%= link_to "Não Avaliar Disciplina", pulouavaliac_path(:idadisc => alunodisc.id) %>  </td>
+          <% else %>
+            <td colspan = 2>Avaliação realizada anteriormente.</td>
+          <% end %>
+        </tr>
+      </tbody>
+    <% end %>
+  </table>
+  <br>
+
+<% end %>
+

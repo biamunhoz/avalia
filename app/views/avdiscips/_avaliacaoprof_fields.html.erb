@@ -1,0 +1,56 @@
+  <div class="field">
+    <%= form.hidden_field :disciplina_id %>
+    <%= form.hidden_field :ano %>
+    <%= form.hidden_field :semestre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :professor_id, "Professor" %>
+    <%= form.hidden_field :professor_id %>
+    <p><b><%= form.object.professor.nome %></b></p>
+  </div>
+
+  <div class="field">
+    <%= form.label :aulascondizentes, "5.1.a. O professor ministrou aulas condizentes com o conteúdo programático " %>
+    <%= form.radio_button :aulascondizentes, 1 %> 1 
+    <%= form.radio_button :aulascondizentes, 2 %> 2
+    <%= form.radio_button :aulascondizentes, 3 %> 3
+    <%= form.radio_button :aulascondizentes, 4 %> 4
+    <%= form.radio_button :aulascondizentes, 5 %> 5
+  </div>
+
+  <div class="field">
+    <%= form.label :didatico, "5.1.b. O professor foi didático na apresentação dos conteúdos" %>
+    <%= form.radio_button :didatico, 1 %> 1 
+    <%= form.radio_button :didatico, 2 %> 2
+    <%= form.radio_button :didatico, 3 %> 3
+    <%= form.radio_button :didatico, 4 %> 4
+    <%= form.radio_button :didatico, 5 %> 5
+  </div>
+
+  <div class="field">
+    <%= form.label :claro, "5.1.c. O professor foi claro na solução de dúvidas" %>
+    <%= form.radio_button :claro, 1 %> 1 
+    <%= form.radio_button :claro, 2 %> 2
+    <%= form.radio_button :claro, 3 %> 3
+    <%= form.radio_button :claro, 4 %> 4
+    <%= form.radio_button :claro, 5 %> 5
+  </div>
+
+  <div class="field">
+    <%= form.label :respeito, "5.1.d. O professor teve respeito nas interações com os alunos" %>
+    <%= form.radio_button :respeito, 1 %> 1 
+    <%= form.radio_button :respeito, 2 %> 2
+    <%= form.radio_button :respeito, 3 %> 3
+    <%= form.radio_button :respeito, 4 %> 4
+    <%= form.radio_button :respeito, 5 %> 5
+  </div>
+
+  <div class="field">
+    <%= form.label :comportamentotur, "5.2.e. Houve, da parte da turma, um comportamento respeitoso em relação ao professor" %>
+    <%= form.radio_button :comportamentotur, 1 %> 1 
+    <%= form.radio_button :comportamentotur, 2 %> 2
+    <%= form.radio_button :comportamentotur, 3 %> 3
+    <%= form.radio_button :comportamentotur, 4 %> 4
+    <%= form.radio_button :comportamentotur, 5 %> 5
+  </div>

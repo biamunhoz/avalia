@@ -1,0 +1,42 @@
+<%= form_with(model: alunodisc, local: true) do |form| %>
+  <% if alunodisc.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(alunodisc.errors.count, "error") %> prohibited this alunodisc from being saved:</h2>
+
+      <ul>
+      <% alunodisc.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :aluno_id, "Aluno" %>
+    <%= form.select("aluno_id", Aluno.all.collect {|a| [a.numusp, a.id ] })  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :disciplina_id, "Disciplina" %>
+    <%= form.select("disciplina_id", Disciplina.all.collect {|d| [d.codigo , d.id ] })  %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status, "Status" %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :semestre, "Semestre" %>
+    <%= form.number_field :semestre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ano, "Ano" %>
+    <%= form.number_field :ano %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Salvar" %>
+  </div>
+<% end %>

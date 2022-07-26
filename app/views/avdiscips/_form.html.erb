@@ -1,0 +1,166 @@
+<%= form_with(model: avdiscip, local: true) do |form| %>
+  <% if avdiscip.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(avdiscip.errors.count, "error") %> prohibited this avdiscip from being saved:</h2>
+
+      <ul>
+      <% avdiscip.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :disciplina_id, "Disciplina" %>
+    <%= form.hidden_field :disciplina_id %>
+    <%= form.object.disciplina.codigo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ano %>
+    <%= form.hidden_field :ano %>
+    <%= form.object.ano %>
+  </div>
+
+  <div class="field">
+    <%= form.label :semestre %>
+    <%= form.hidden_field :semestre %>
+    <%= form.object.semestre %>
+  </div>
+
+  <h3>1. Sobre o cronograma da Disciplina</h3>
+
+  <div class="field">
+    <%= form.label :cronograma, "1.1. O cronograma de aulas e avaliações foi apresentado?" %>
+    <%= form.radio_button :cronograma, true  %> Sim 
+    <%= form.radio_button :cronograma, false %> Não 
+  </div>
+
+  <div class="field">
+    <%= form.label :criterios, "1.2. Os critérios de avaliação foram apresentados?" %>
+    <%= form.radio_button :criterios, true  %> Sim 
+    <%= form.radio_button :criterios, false %> Não 
+  </div>
+
+  <div class="field">
+    <%= form.label :entendeuobj, "1.3. Você entendeu os objetivos da disciplina?" %>
+    <%= form.radio_button :entendeuobj, true  %> Sim 
+    <%= form.radio_button :entendeuobj, false %> Não
+  </div>
+
+  <h3>2. Sobre o desenvolvimento da disciplina</h3>
+
+  <div class="field">
+    <%= form.label :cronocumprido, "2.1. O cronograma foi cumprido satisfatoriamente" %>
+    <%= form.radio_button :cronocumprido, 1 %> 1 
+    <%= form.radio_button :cronocumprido, 2 %> 2
+    <%= form.radio_button :cronocumprido, 3 %> 3
+    <%= form.radio_button :cronocumprido, 4 %> 4
+    <%= form.radio_button :cronocumprido, 5 %> 5
+  </div>
+
+  <div class="field">
+    <%= form.label :estrategias, "2.2. As estratégias didáticas contribuíram para o seu aprendizado" %>
+    <%= form.radio_button :estrategias, 1 %> 1 
+    <%= form.radio_button :estrategias, 2 %> 2
+    <%= form.radio_button :estrategias, 3 %> 3
+    <%= form.radio_button :estrategias, 4 %> 4
+    <%= form.radio_button :estrategias, 5 %> 5    
+  </div>
+
+  <div class="field">
+    <%= form.label :quantadequada, "2.3. A quantidade exigida de atividades extraclasse foi adequada" %>
+    <%= form.radio_button :quantadequada, 1 %> 1 
+    <%= form.radio_button :quantadequada, 2 %> 2
+    <%= form.radio_button :quantadequada, 3 %> 3
+    <%= form.radio_button :quantadequada, 4 %> 4
+    <%= form.radio_button :quantadequada, 5 %> 5
+  </div>
+
+  <div class="field">
+    <%= form.label :coerencia, "2.4. O conteúdo cobrado nas avaliações foi coerente com o programa da disciplina" %>
+    <%= form.radio_button :coerencia, 1 %> 1 
+    <%= form.radio_button :coerencia, 2 %> 2
+    <%= form.radio_button :coerencia, 3 %> 3
+    <%= form.radio_button :coerencia, 4 %> 4
+    <%= form.radio_button :coerencia, 5 %> 5    
+  </div>
+
+  <h3>3. Auto avaliação</h3>
+
+  <div class="field">
+    <%= form.label :seuconhecimento, "3.1. Os conhecimentos que você já tinha foram suficientes para acompanhar a disciplina" %>
+    <%= form.radio_button :seuconhecimento, 1 %> 1 
+    <%= form.radio_button :seuconhecimento, 2 %> 2
+    <%= form.radio_button :seuconhecimento, 3 %> 3
+    <%= form.radio_button :seuconhecimento, 4 %> 4
+    <%= form.radio_button :seuconhecimento, 5 %> 5  
+
+  </div>
+
+  <div class="field">
+    <%= form.label :extraclasse, "3.2. Avalie sua dedicação extraclasse ao aprendizado da disciplina" %>
+    <%= form.radio_button :extraclasse, 1 %> 1 
+    <%= form.radio_button :extraclasse, 2 %> 2
+    <%= form.radio_button :extraclasse, 3 %> 3
+    <%= form.radio_button :extraclasse, 4 %> 4
+    <%= form.radio_button :extraclasse, 5 %> 5  
+  </div>
+
+  <div class="field">
+    <%= form.label :saladeaula, "3.3. Avalie sua dedicação em sala de aula ao aprendizado da disciplina" %>
+    <%= form.radio_button :saladeaula, 1 %> 1 
+    <%= form.radio_button :saladeaula, 2 %> 2
+    <%= form.radio_button :saladeaula, 3 %> 3
+    <%= form.radio_button :saladeaula, 4 %> 4
+    <%= form.radio_button :saladeaula, 5 %> 5  
+  </div>
+
+  <div class="field">
+    <%= form.label :percepcao, "3.4. Percepção de aprendizado: sinto-me capaz de explicar assuntos da disciplina para calouros" %>
+    <%= form.radio_button :percepcao, 1 %> 1 
+    <%= form.radio_button :percepcao, 2 %> 2
+    <%= form.radio_button :percepcao, 3 %> 3
+    <%= form.radio_button :percepcao, 4 %> 4
+    <%= form.radio_button :percepcao, 5 %> 5      
+  </div>
+
+  <h3>4. Avaliação geral da disciplina</h3>
+
+  <div class="field">
+    <%= form.label :notadisciplina, "4.1. Atribua uma nota para a disciplina" %>
+    <%= form.radio_button :notadisciplina, 1 %> 1 
+    <%= form.radio_button :notadisciplina, 2 %> 2
+    <%= form.radio_button :notadisciplina, 3 %> 3
+    <%= form.radio_button :notadisciplina, 4 %> 4
+    <%= form.radio_button :notadisciplina, 5 %> 5     
+  </div>
+
+  <div class="field">
+    <%= form.label :recomendaria, "4.2. Você recomendaria essa disciplina para um colega" %>
+    <%= form.radio_button :recomendaria, 1 %> 1 
+    <%= form.radio_button :recomendaria, 2 %> 2
+    <%= form.radio_button :recomendaria, 3 %> 3
+    <%= form.radio_button :recomendaria, 4 %> 4
+    <%= form.radio_button :recomendaria, 5 %> 5      
+  </div>
+
+  <div class="field">
+    <%= form.label :sugestoes, "4.3. Escreva abaixo suas sugestões para melhoria da disciplina, especialmente sobre os itens que você avaliou como insatisfatórios. Inclua sugestões sobre atividades em sala de aula e fora dela que, na sua opinião, podem ser mais bem exploradas.
+Se quiser, use também este espaço para avaliação individual dos professores por escrito." %>
+    <%= form.text_area :sugestoes %>
+  </div>
+
+  <h2>Avaliar professores que ministram essa disciplina</h2>
+
+  <%= form.fields_for :avaliacaoprofs do |lp|  %>
+    <%= render 'avaliacaoprof_fields', form:lp %>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit "Avaliar" %>
+  </div>
+<% end %>
+
+

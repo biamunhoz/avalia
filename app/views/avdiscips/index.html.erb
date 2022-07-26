@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Avaliação das Disciplinas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Disciplina</th>
+      <th>Ano</th>
+      <th>Semestre</th>
+      <th>Pulou Avaliação</th>
+      <th>Cronograma de aulas e avaliações foi apresentado?</th>
+      <th>Critérios de avaliação foram apresentados?</th>
+      <th>Entendeu os objetivos da disciplina?</th>
+      <th>Cronograma foi cumprido satisfatoriamente</th>
+      <th>Estratégias didáticas contribuíram para o seu aprendizado</th>
+      <th>Quantidade de atividades extraclasse foi adequada</th>
+      <th>Conteúdo nas avaliações foi coerente com o programa da disciplina</th>
+      <th>Conhecimentos que você já tinha foram suficientes para acompanhar a disciplina</th>
+      <th>Dedicação extraclasse ao aprendizado da disciplina</th>
+      <th>Dedicação em sala de aula ao aprendizado da disciplina</th>
+      <th>Percepção de aprendizado</th>
+      <th>Nota para a disciplina</th>
+      <th>Recomendaria essa disciplina</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @avdiscips.each do |avdiscip| %>
+      <tr>
+        <td><%= avdiscip.disciplina.codigo %></td>
+        <td><%= avdiscip.ano %></td>
+        <td><%= avdiscip.semestre %></td>
+        <td><%= avdiscip.pulouavaliacao %></td>
+        <td><%= avdiscip.cronograma %></td>
+        <td><%= avdiscip.criterios %></td>
+        <td><%= avdiscip.entendeuobj %></td>
+        <td><%= avdiscip.cronocumprido %></td>
+        <td><%= avdiscip.estrategias %></td>
+        <td><%= avdiscip.quantadequada %></td>
+        <td><%= avdiscip.coerencia %></td>
+        <td><%= avdiscip.seuconhecimento %></td>
+        <td><%= avdiscip.extraclasse %></td>
+        <td><%= avdiscip.saladeaula %></td>
+        <td><%= avdiscip.percepcao %></td>
+        <td><%= avdiscip.notadisciplina %></td>
+        <td><%= avdiscip.recomendaria %></td>
+        <td><%= link_to 'Mostrar', avdiscip %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+
+<!-- Tratar aqui o pular avaliação >
