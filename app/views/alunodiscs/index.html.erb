@@ -62,7 +62,7 @@
           <td><%= alunodisc.ano %></td>
           <% if alunodisc.status == "Liberada" %>
             <td><%= link_to "Avaliar Disciplina", new_avdiscip_path(:idadisc => alunodisc.id) %>  </td>
-            <td><%= link_to "Não Avaliar Disciplina", pulouavaliac_path(:idadisc => alunodisc.id) %>  </td>
+            <td><%= link_to "Pular avaliação", pulouavaliac_path(:idadisc => alunodisc.id) %>  </td>
           <% else %>
             <td colspan = 2>Avaliação realizada anteriormente.</td>
           <% end %>
