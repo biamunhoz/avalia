@@ -32,10 +32,18 @@
         <td><%= avdiscip.disciplina.codigo %></td>
         <td><%= avdiscip.ano %></td>
         <td><%= avdiscip.semestre %></td>
-        <td><%= avdiscip.pulouavaliacao %></td>
-        <td><%= avdiscip.cronograma %></td>
-        <td><%= avdiscip.criterios %></td>
-        <td><%= avdiscip.entendeuobj %></td>
+        <td><%= avdiscip.pulouavaliacao == true ? "Sim" : "Não" %></td>
+
+        <% if avdiscip.pulouavaliacao == true %>
+          <td></td>
+          <td></td>
+          <td></td>
+        <% else %>
+          <td><%= avdiscip.cronograma == true ? "Sim" : "Não"  %></td>
+          <td><%= avdiscip.criterios == true ? "Sim" : "Não"  %></td>
+          <td><%= avdiscip.entendeuobj == true ? "Sim" : "Não"  %></td>
+        <% end %>
+
         <td><%= avdiscip.cronocumprido %></td>
         <td><%= avdiscip.estrategias %></td>
         <td><%= avdiscip.quantadequada %></td>
